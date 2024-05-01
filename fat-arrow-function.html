@@ -13,9 +13,19 @@
     //ES6 Fat arrow function
     console.log("ES6 Fat arrow function");
 
+    //Arrow function with this
+    var myInfo = {
+      name: "Mosfequr",
+      play: ["Cricket,Football", "Tenish"],
+      funLike: function () {
+        this.play.forEach(j)
+      }
+    }
+    myInfo.funLike()
+
     //Arrow function short version
-    let numberArrow = (k, l) => k + l;
-    console.log("Arrow function short version :", numberArrow(9, 6));
+    // let numberArrow = (k, l) => k + l;
+    // console.log("Arrow function short version :", numberArrow(9, 6));
 
     // //Arrow function pass more than one parameter
     // let numberArrow = (k, l) => {

@@ -16,12 +16,12 @@
     //Arrow function with this
     var myInfo = {
       name: "Mosfequr",
-      play: ["Cricket,Football", "Tenish"],
+      play: ["Cricket", "Football", "Tenish"],
       funLike: function () {
-        this.play.forEach(j)
+        this.play.forEach((j) => console.log(`${this.name} play ${j}`));
       }
     }
-    myInfo.funLike()
+    myInfo.funLike();
 
     //Arrow function short version
     // let numberArrow = (k, l) => k + l;

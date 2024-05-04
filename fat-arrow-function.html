@@ -7,21 +7,35 @@
 
 <body>
   <h1>ES6 Fat arrow function</h1>
-  <p id="showNumber"></p>
+
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" class="firstName">
+  <p class="showText"></p>
+  <p class="message"></p>
 
   <script>
     //ES6 Fat arrow function
     console.log("ES6 Fat arrow function");
 
-    //Arrow function with this
-    var myInfo = {
-      name: "Mosfequr",
-      play: ["Cricket", "Football", "Tenish"],
-      funLike: function () {
-        this.play.forEach((j) => console.log(`${this.name} play ${j}`));
-      }
+    //uses of arrow function
+    const fName = document.querySelector(".firstName");
+    const showText = document.querySelector(".showText");
+    const message = document.querySelector(".message");
+
+    const showMessage = () => {
+      showText.innerHTML = this.value;
     }
-    myInfo.funLike();
+    fName.addEventListener("keyup", showMessage);
+
+    //Arrow function with this
+    // var myInfo = {
+    //   name: "Mosfequr",
+    //   play: ["Cricket", "Football", "Tenish"],
+    //   funLike: function () {
+    //     this.play.forEach((j) => console.log(`${this.name} play ${j}`));
+    //   }
+    // }
+    // myInfo.funLike();
 
     //Arrow function short version
     // let numberArrow = (k, l) => k + l;

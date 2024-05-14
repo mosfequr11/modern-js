@@ -9,23 +9,27 @@
   <h1>ES6 Fat arrow function</h1>
 
   <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname" class="firstName">
-  <p class="showText"></p>
-  <p class="message"></p>
+  <input type="text" id="fname" name="fname" class="first-name">
+  <p class="show-text"></p>
+  <p class="show-message"></p>
 
   <script>
     //ES6 Fat arrow function
     console.log("ES6 Fat arrow function");
 
     //uses of arrow function
-    const fName = document.querySelector(".firstName");
-    const showText = document.querySelector(".showText");
-    const message = document.querySelector(".message");
-
-    const showMessage = () => {
+    const firstName = document.querySelector(".first-name");
+    const showText = document.querySelector(".show-text");
+    const showMessage = document.querySelector(".show-message");
+    // using normal function to fix undefine issue
+    function funcView() {
       showText.innerHTML = this.value;
+      var self = this;
+      setTimeout(function () {
+        showMessage.innerHTML = `Write something: ${self.value}`;
+      }, 1000)
     }
-    fName.addEventListener("keyup", showMessage);
+    firstName.addEventListener("keyup", funcView);
 
     //Arrow function with this
     // var myInfo = {
